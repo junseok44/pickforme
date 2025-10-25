@@ -1,0 +1,79 @@
+name: Deploy PickForMe Server to Prod
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Start SSH agent with deploy keys
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: |
+            ${{ secrets.REPO_DEPLOY_KEY }}
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Ensure latest main HEAD
+        run: |
+          git checkout main
+          git pull origin main
+
+      - name: Set remote to SSH
+        run: git remote set-url origin git@github.com:Si-gongan/pickforme.git
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.19.5"
+
+      - name: Deploy to EC2
+        id: deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PROD_EC2_HOST }}
+          username: ${{ secrets.PROD_EC2_USERNAME }}
+          key: ${{ secrets.PROD_EC2_SSH_KEY }}
+          script: |
+            set -e
+
+            source ~/.nvm/nvm.sh
+            nvm install 20.19.5
+            nvm use 20.19.5
+
+            cd /home/ubuntu/pickforme
+            git fetch origin
+            git checkout main
+            git config pull.rebase false
+            git pull origin main
+            cd back
+            npm install
+            npm run build
+            if ! command -v pm2 &> /dev/null; then
+              npm install -g pm2
+            fi
+            pm2 start pm2.json
+
+      - name: Create and push tags
+        if: steps.deploy.outcome == 'success'
+        run: |
+          TAG="server-prod-$(TZ=Asia/Seoul date +'%y%m%d-%H%M')"
+          echo "Generated tag: $TAG"
+          git tag "$TAG"
+          git tag -fa server-prod-latest -m "latest prod server tag" "$TAG"
+          git push origin "$TAG"
+          git push --force origin server-prod-latest

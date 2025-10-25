@@ -1,0 +1,31 @@
+<svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_2588_293" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M61 2H4C2.89543 2 2 2.89543 2 4V57C2 58.1046 2.89543 59 4 59H50V61H4C1.79086 61 0 59.2091 0 57V4C0 1.79086 1.79086 0 4 0H61C63.2091 0 65 1.79086 65 4V41H63V4C63 2.89543 62.1046 2 61 2Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M61 2H4C2.89543 2 2 2.89543 2 4V57C2 58.1046 2.89543 59 4 59H50V61H4C1.79086 61 0 59.2091 0 57V4C0 1.79086 1.79086 0 4 0H61C63.2091 0 65 1.79086 65 4V41H63V4C63 2.89543 62.1046 2 61 2Z" fill="#C8C8C8"/>
+<path d="M50 59H51V58H50V59ZM50 61V62H51V61H50ZM65 41V42H66V41H65ZM63 41H62V42H63V41ZM4 3H61V1H4V3ZM3 4C3 3.44772 3.44771 3 4 3V1C2.34315 1 1 2.34315 1 4H3ZM3 57V4H1V57H3ZM4 58C3.44772 58 3 57.5523 3 57H1C1 58.6569 2.34315 60 4 60V58ZM50 58H4V60H50V58ZM51 61V59H49V61H51ZM4 62H50V60H4V62ZM-1 57C-1 59.7614 1.23858 62 4 62V60C2.34315 60 1 58.6569 1 57H-1ZM-1 4V57H1V4H-1ZM4 -1C1.23858 -1 -1 1.23857 -1 4H1C1 2.34315 2.34315 1 4 1V-1ZM61 -1H4V1H61V-1ZM66 4C66 1.23858 63.7614 -1 61 -1V1C62.6569 1 64 2.34315 64 4H66ZM66 41V4H64V41H66ZM63 42H65V40H63V42ZM62 4V41H64V4H62ZM61 3C61.5523 3 62 3.44772 62 4H64C64 2.34315 62.6569 1 61 1V3Z" fill="currentColor" mask="url(#path-1-inside-1_2588_293)"/>
+<circle cx="49" cy="7" r="1" fill="currentColor"/>
+<circle cx="53" cy="7" r="1" fill="currentColor"/>
+<circle cx="57" cy="7" r="1" fill="currentColor"/>
+<line x1="1" y1="12" x2="64" y2="12" stroke="currentColor" stroke-width="2"/>
+<mask id="path-7-inside-2_2588_293" fill="white">
+<rect x="7" y="18" width="52" height="10" rx="1"/>
+</mask>
+<rect x="7" y="18" width="52" height="10" rx="1" stroke="currentColor" stroke-width="4" mask="url(#path-7-inside-2_2588_293)"/>
+<path d="M16 23H26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M32 23H53" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<circle cx="33.5" cy="42.5" r="8.5" stroke="currentColor" stroke-width="2"/>
+<path d="M33 39V43" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M33 43H35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M49 43H68" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M49 69H68" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M51 50C51 50.5523 51.4477 51 52 51C52.5523 51 53 50.5523 53 50L51 50ZM51 43L51 50L53 50L53 43L51 43Z" fill="currentColor"/>
+<path d="M64 50C64 50.5523 64.4477 51 65 51C65.5523 51 66 50.5523 66 50L64 50ZM64 43L64 50L66 50L66 43L64 43Z" fill="currentColor"/>
+<path d="M52 50H65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M66 62C66 61.4477 65.5523 61 65 61C64.4477 61 64 61.4477 64 62L66 62ZM66 69L66 62L64 62L64 69L66 69Z" fill="currentColor"/>
+<path d="M52 68L52 62" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M52 50L59.9379 57.3273L65 62" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M52 62L55.7399 58.5478L65 50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M52.4453 68.168L58.4453 64.168" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+<path d="M58.6007 64.2006L64.3657 68.5324" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

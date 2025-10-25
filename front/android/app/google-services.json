@@ -1,0 +1,134 @@
+{
+    "project_info": {
+        "project_number": "951645615132",
+        "project_id": "pickforme-b8daf",
+        "storage_bucket": "pickforme-b8daf.firebasestorage.app"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:951645615132:android:a5b0625c63f1a895a99bd9",
+                "android_client_info": {
+                    "package_name": "com.sigonggan.pickforme"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "951645615132-23r0b8d24bue4q0gk2ll9q5j4j4cupbl.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.sigonggan.pickforme",
+                        "certificate_hash": "0c6ffd134aec751e06b01d2cb41b5b2f3f88a518"
+                    }
+                },
+                {
+                    "client_id": "951645615132-q1ojql4h4cf5kgu201ic9k5p3me8g46j.apps.googleusercontent.com",
+                    "client_type": 1,
+                    "android_info": {
+                        "package_name": "com.sigonggan.pickforme",
+                        "certificate_hash": "97789567794c8d5e7c5195d9ac4ad06184ebed9e"
+                    }
+                },
+                {
+                    "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyAvZyq9rO1VV7nZxwUgYQ88cqGSfBqsDTM"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "951645615132-o03i09hk60vq00vl25ri2vu8uoohdq7l.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.sigonggan.pickforme"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:951645615132:android:ce3b623c23fd4039a99bd9",
+                "android_client_info": {
+                    "package_name": "com.sigonggan.pickforme.dev"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyAvZyq9rO1VV7nZxwUgYQ88cqGSfBqsDTM"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "951645615132-o03i09hk60vq00vl25ri2vu8uoohdq7l.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.sigonggan.pickforme"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:951645615132:android:105cac0450bcac9fa99bd9",
+                "android_client_info": {
+                    "package_name": "com.sigonggan.pickforme.staging"
+                }
+            },
+            "oauth_client": [
+                {
+                    "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                    "client_type": 3
+                }
+            ],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyAvZyq9rO1VV7nZxwUgYQ88cqGSfBqsDTM"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": [
+                        {
+                            "client_id": "951645615132-7o9kcmj0pe93krhthhcor6vqttb6m8ul.apps.googleusercontent.com",
+                            "client_type": 3
+                        },
+                        {
+                            "client_id": "951645615132-o03i09hk60vq00vl25ri2vu8uoohdq7l.apps.googleusercontent.com",
+                            "client_type": 2,
+                            "ios_info": {
+                                "bundle_id": "com.sigonggan.pickforme"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

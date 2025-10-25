@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "sourceRoot": "./src",
+    "target": "esnext",
+    "outDir": "dist/",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": "./src",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "types": ["jest", "node"],
+    "strictPropertyInitialization": false
+  },
+  "noEmit": false,
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "backups", "dist"]
+}

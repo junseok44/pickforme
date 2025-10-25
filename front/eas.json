@@ -1,0 +1,53 @@
+{
+  "cli": {
+    "version": ">= 3.13.3",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug",
+        "env": {
+          "ANDROID_HOME": "/Users/shareemotion/Library/Android/sdk",
+          "APP_ENV": "development"
+        }
+      },
+      "channel": "development"
+    },
+    "staging": {
+      "distribution": "store",
+      "channel": "staging",
+      "android": {
+        "credentialsSource": "local"
+      },
+      "ios": {
+        "credentialsSource": "remote"
+      },
+      "environment": "preview",
+      "env": {
+        "APP_ENV": "staging"
+      }
+    },
+    "production": {
+      "distribution": "store",
+      "channel": "production",
+      "android": {
+        "credentialsSource": "local"
+      },
+      "ios": {
+        "credentialsSource": "remote"
+      },
+      "environment": "production",
+      "env": {
+        "APP_ENV": "production"
+      }
+    }
+  },
+  "submit": {
+    "production": {},
+    "development": {}
+  }
+}

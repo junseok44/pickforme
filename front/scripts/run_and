@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# 파일 경로 설정
+GRADLE_FILE="/Volumes/realtek_1tb/Projects/sigongan/pickforme/front/node_modules/expo-modules-core/android/ExpoModulesCorePlugin.gradle"
+
+# 백업 파일 생성
+cp "$GRADLE_FILE" "${GRADLE_FILE}.backup"
+
+# 'from components.release'를 'from components.findByName('release')'로 변경
+sed -i '' 's/from components\.release/from components.findByName('\''release'\'')/g' "$GRADLE_FILE"
+
+echo "ExpoModulesCorePlugin.gradle 파일이 수정되었습니다."
+echo "백업 파일이 ${GRADLE_FILE}.backup에 저장되었습니다."
+
+cd android 
+./gradlew clean
+arch -x86_64 ./gradlew assembleDebug --stacktrace --info | tee build_log
+cd ..

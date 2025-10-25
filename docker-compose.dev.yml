@@ -1,0 +1,76 @@
+services:
+  # MongoDB
+  db:
+    image: mongo:8.0.14-noble
+    container_name: pickforme-mongodb-dev
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: qwer1234
+      MONGO_INITDB_DATABASE: pickforme-dev
+    volumes:
+      - mongodb_data:/data/db
+      - ./back/backups/pickforme-dev:/backups/pickforme-dev:ro
+      - ./scripts/mongo-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - pickforme-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    command: ["mongod", "--quiet"]
+    logging:
+      driver: "none"
+    tty: false
+    stdin_open: false
+
+  # Backend API
+  server:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.dev
+    container_name: pickforme-back-dev
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./back/.env.local
+    volumes:
+      - ./back:/app
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - pickforme-network
+    command: npm run dev
+
+  # Admin Dashboard
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile.dev
+    container_name: pickforme-admin-dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file: "./admin/.env.local"
+    volumes:
+      - ./admin:/app
+      - /app/node_modules
+    depends_on:
+      - server
+    networks:
+      - pickforme-network
+    command: npm run dev
+
+volumes:
+  mongodb_data:
+
+networks:
+  pickforme-network:
+    driver: bridge

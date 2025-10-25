@@ -1,0 +1,41 @@
+FROM node:20-alpine
+
+# Puppeteer 설정: 다운로드 스킵하고 시스템 크로미움 사용
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
+# Playwright가 런타임에 브라우저 설치 요구하지 않도록
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+
+# 작업 디렉토리 설정
+WORKDIR /app
+
+# 크로미움 및 폰트/런타임 의존성 설치 (arm64/alpine 호환)
+RUN apk add --no-cache \
+  chromium \
+  nss \
+  freetype \
+  harfbuzz \
+  ttf-freefont \
+  ca-certificates \
+  dumb-init \
+  # playwright 필요한 일부 런타임
+  udev \
+  libstdc++ \
+  mesa-dri-gallium
+
+# 패키지 파일 복사
+COPY package*.json ./
+
+# 의존성 설치
+RUN npm install \
+ && npx playwright install --with-deps || true
+
+# 소스 코드 복사
+COPY . .
+
+# 포트 노출
+EXPOSE 3001
+
+# 개발 서버 실행
+CMD ["dumb-init", "npm", "run", "dev"]

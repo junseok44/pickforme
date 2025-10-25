@@ -1,0 +1,24 @@
+# node modules
+node_modules
+credentials/*
+
+credentials/*
+# backups
+backups/*
+dist/*
+credentials/*
+# misc
+.env
+.env.local
+.env.development
+.env.production
+.DS_Store
+
+# vi
+*.swp
+
+# webpack
+.webpackCache
+
+logs/*
+google_api_credentials.json
